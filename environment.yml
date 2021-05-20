@@ -1,4 +1,4 @@
-name: gym-rl-psf
+name: RL-PSF
 channels:
   - conda-forge
   - defaults
@@ -9,4 +9,4 @@ dependencies:
   - numpy==1.19
   - pip:
     - -e ./
-prefix: ..\Anaconda3\envs\gym-rl-psf
+prefix: ..\Anaconda3\envs\RL-PSF
