@@ -3,14 +3,6 @@ A repository for TTK4900 Master thesis at NTNU. Project is stabilizing a floatin
 
 Written in `Python 3.7`.
 ## Installation
-### Mosek
-You will need a licence to use Mosek (free academic):\
-https://www.mosek.com/license/request/?i=acp
-
-Add the license file to `%USERPROFILE%/mosek/mosek.lic`.
-
-This is only required when generating a new terminal set.
-
 ### Python dependencies and packages
 
 Conda env is highly recommended due to import errors with pip.
@@ -23,6 +15,14 @@ conda activate gym-rl-mpc
 ```
 Alternatively, dependencies are listed in
 `environment.yml` and `setup.py`.
+
+### Mosek
+You will need a licence to use Mosek (free academic):\
+https://www.mosek.com/license/request/?i=acp
+
+Add the license file to `%USERPROFILE%/mosek/mosek.lic`.
+
+This is only required when generating a new terminal set.
 
 
 ## Running the program
