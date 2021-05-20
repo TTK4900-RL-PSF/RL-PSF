@@ -1,4 +1,4 @@
-# gym-turbine
+# RL-PSF
 A repository for TTK4900 Master thesis at NTNU. Project is stabilizing a floating off-shore wind turbine using Reinforcement Learning and a PSF
 
 Written in `Python 3.7`.
@@ -87,8 +87,3 @@ Required arguments:
 Optional arguments:
 - --save_video
 - --time <Max simulation time (seconds)>
-
-
-## Based on
-
-https://arxiv.org/pdf/1812.05506.pdf
