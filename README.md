@@ -11,7 +11,7 @@ Run (w/ conda):
 
 ```
 conda env create -f environment.yml
-conda activate gym-rl-mpc
+conda activate gym-rl-psf
 ```
 Alternatively, dependencies are listed in
 `environment.yml` and `setup.py`.

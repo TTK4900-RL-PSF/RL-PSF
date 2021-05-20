@@ -1,4 +1,4 @@
-name: gym-rl-mpc
+name: gym-rl-psf
 channels:
   - conda-forge
   - defaults
@@ -9,4 +9,4 @@ dependencies:
   - numpy==1.19
   - pip:
     - -e ./
-prefix: ..\Anaconda3\envs\gym-rl-mpc
+prefix: ..\Anaconda3\envs\gym-rl-psf
