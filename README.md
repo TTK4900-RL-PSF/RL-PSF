@@ -11,7 +11,7 @@ Run (w/ conda):
 
 ```
 conda env create -f environment.yml
-conda activate gym-rl-psf
+conda activate RL-PSF
 ```
 Alternatively, dependencies are listed in
 `environment.yml` and `setup.py`.
