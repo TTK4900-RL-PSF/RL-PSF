@@ -7,7 +7,7 @@ import gym_rl_mpc.utils.model_params as params
 from PSF.utils import center_optimization, Hh_from_disconnected_constraints, steady_state, sample_inside_polytope
 from gym_rl_mpc.utils.model_params import RPM2RAD, DEG2RAD
 
-# Constants
+# Variable definitions
 w = SX.sym('w')
 theta = SX.sym('theta')
 theta_dot = SX.sym('theta_dot')
@@ -29,7 +29,7 @@ Q_wind = g * w - params.b_d_r * Omega * Omega
 F_wind_simple = params.d_r * w * w + g * Omega
 Q_wind_simple = g * w - params.b_d_r * Omega * Omega
 
-# symbolic model
+# Symbolic model
 symbolic_x_dot = vertcat(
     theta_dot,
     params.C_1 * cos(theta) * sin(theta) + params.C_2 * sin(theta) + params.C_3 * cos(theta) * sin(
@@ -38,7 +38,6 @@ symbolic_x_dot = vertcat(
 )
 
 # Constraints
-
 sys_lub_x = np.asarray([
     [-10 * DEG2RAD, 10 * DEG2RAD],
     [-10 * DEG2RAD, 10 * DEG2RAD],
