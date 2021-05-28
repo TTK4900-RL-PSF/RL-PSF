@@ -52,16 +52,23 @@ def parse_argument():
 def test(args):
     if isinstance(args, dict):
         args = argparse.Namespace(**args)
+    
+    # Change config if changes defined
     config = gym_rl_mpc.SCENARIOS[args.env]['config'].copy()
     config['max_episode_time'] = args.time
     if args.psf:
         config['use_psf'] = True
         print("Using PSF corrected actions")
+    
+    # Create environment
     env = gym.make(args.env, env_config=config)
     env_id = env.unwrapped.spec.id
 
+    # Load agent
     agent_path = Path(args.agent)
     agent = PPO.load(agent_path)
+
+    # Simulate episodes and save results to lists
     cumulative_rewards = []
     cumulative_psf_rewards = []
     crashes = []
@@ -86,8 +93,10 @@ def test(args):
         print(f'Avg. Performance: {np.sum(performances_no_crash)/(args.num_episodes-np.sum(crashes))}')
     print(f'Crashes: {np.sum(crashes)*100/args.num_episodes}%')
 
+    # Make dataframe to save results to file
     test_df = DataFrame(list(zip(cumulative_rewards, cumulative_psf_rewards, performances, crashes)), columns=['cumulative_reward','cumulative_psf_reward','performance','crash'])
     
+    # Save results to file
     agent_path_list = agent_path.parts
     testdata_dir = Path("logs", agent_path_list[-4], agent_path_list[-3], "test_data")
     os.makedirs(testdata_dir, exist_ok=True)

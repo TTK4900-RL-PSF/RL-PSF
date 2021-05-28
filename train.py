@@ -16,7 +16,7 @@ from gym_rl_mpc import reporting
 
 def linear_schedule(initial_value):
     """
-    Linear learning rate schedule.
+    Linear learning rate schedule from initial_value to 0.
     :param initial_value: (float or str)
     :return: (function)
     """
@@ -45,7 +45,7 @@ hyperparams = {
 
 class ReportingCallback(BaseCallback):
     """
-    Callback for reporting training
+    Callback for reporting training to file
     :param report_dir: Path to the folder where the report will be saved.
     :param verbose:
     """
@@ -102,7 +102,7 @@ class ReportingCallback(BaseCallback):
 
 class TensorboardCallback(BaseCallback):
     """
-    Custom callback for plotting additional values in tensorboard.
+    Custom callback for reporting additional values to tensorboard.
     """
 
     def __init__(self, verbose=0):

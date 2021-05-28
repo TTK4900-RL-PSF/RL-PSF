@@ -4,6 +4,13 @@ import gym_rl_mpc.utils.model_params as params
 import sys
 
 def simulate_episode(env, agent, max_time, verbose=False, id=None):
+    """
+    Simulate one episode and return the resulting info/states.
+    :param env: Environment to simulate in
+    :param agent: Agent to use for simulation
+    :param max_time: maximum simulation time
+    :return: (DataFrame)
+    """
     state_labels = [r"theta", r"theta_dot", r"omega"]
     input_labels = [r"F_thr", r"blade_pitch", r"power"]
     agent_action_labels = [r"agent_F_thr", r"agent_blade_pitch", r"agent_power"]

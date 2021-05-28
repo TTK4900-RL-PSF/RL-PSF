@@ -89,7 +89,7 @@ def animate(frame):
     ax_ani.broken_barh([(30, max_power), (30, power_input)], [0.5 * height, 9], facecolors=('blue', 'red'))
     ax_ani.text(0.2 * height, 0.57 * height, f"Power = {env.turbine.input[2] / 1e6:.2f} MW", fontsize=10)
 
-
+# Known bug when closing animation window process might get stuck and terminal needs restart.
 if __name__ == "__main__":
     fig_ani = plt.figure()
     ax_ani = fig_ani.add_subplot(111)

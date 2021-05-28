@@ -48,15 +48,18 @@ def parse_argument():
 def run(args):
     if isinstance(args, dict):
         args = argparse.Namespace(**args)
+    # Fix config
     if args.psf:
         config = gym_rl_mpc.SCENARIOS[args.env]['config'].copy()
         config['use_psf'] = True
         print("Using PSF corrected actions")
     else:
         config = gym_rl_mpc.SCENARIOS[args.env]['config']
+    # Make environment
     env = gym.make(args.env, env_config=config)
     env_id = env.unwrapped.spec.id
 
+    # Simulate episode (save to file if agent is used)
     if args.agent:
         agent_path = args.agent
         agent = PPO.load(agent_path)
