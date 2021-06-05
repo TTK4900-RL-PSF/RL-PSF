@@ -1,5 +1,5 @@
 # RL-PSF
-A repository for TTK4900 Master thesis at NTNU. Project is stabilizing a floating off-shore wind turbine using Reinforcement Learning and a PSF
+A repository for TTK4900 Master thesis at NTNU. Project is stabilizing a floating off-shore wind turbine using Reinforcement Learning and a PSF.
 
 Written in `Python 3.7`.
 ## Installation
